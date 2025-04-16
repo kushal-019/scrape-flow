@@ -3,6 +3,7 @@ import { AppProvider } from '@/components/providers/appProviders'
 import DesktopSidebar from '@/components/sidebar'
 import { ModeToggle } from '@/components/themeModeToggle'
 import { Separator } from '@/components/ui/separator'
+import { SignedIn, UserButton } from '@clerk/nextjs'
 import React from 'react'
 
 function layout({ children }: { children: React.ReactNode }) {
@@ -13,6 +14,9 @@ function layout({ children }: { children: React.ReactNode }) {
                 <header className='flex items-center justify-between py-4 px-6 h-[50px] container'><BreadcrumHeader />
                 <div className='gap-1 flex items-center '>
                     <ModeToggle/>
+                    <SignedIn>
+                        <UserButton/>
+                    </SignedIn>
                 </div>
                 </header>
                 <Separator />
